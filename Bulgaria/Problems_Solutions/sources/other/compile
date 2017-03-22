@@ -1,0 +1,8 @@
+#!/bin/sh
+for i in `ls -d *.cpp`;
+do
+	echo "mingw:"
+	i686-w64-mingw32-g++ $i -o ../../binaries/mingw_$i.exe -std=c++11 -Wall -Igmp -Lgmp -lgmp -lgmpxx;
+	echo "g++:"
+	g++ $i -o ../../binaries/$i.exe -std=c++11 -Wall -Igmp -Lgmp -lgmpxx -lgmp;
+done
